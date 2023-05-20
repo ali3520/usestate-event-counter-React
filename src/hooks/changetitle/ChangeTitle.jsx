@@ -3,12 +3,16 @@ import React, { useState } from 'react'
 const ChangeTitle = () => {
     const [title,setTitle] = useState(['Ahmed','Ali','Usman','Zeeshan','Zain'])
     const [count,setCount] = useState(0)
-    const changeTitle = ()=>{
+    const changeTitle = (e)=>{
         if(count >= 4){
             setCount(0)
         }else{
             setCount(count+1)
         }  
+        e.target.innerHTML ="Clicked"
+        setTimeout(()=>{
+        e.target.innerHTML = "Change Title"
+        },500)
     }
     const surpriseTitle= ()=>{
         let random=Math.floor(Math.random()*title.length);
